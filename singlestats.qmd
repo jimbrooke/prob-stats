@@ -1,0 +1,7 @@
+---
+title: "Single Variable Statistics"
+format: html
+execute:
+  echo: false
+---
+

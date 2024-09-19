@@ -1,0 +1,61 @@
+---
+title: "Histograms"
+format: html
+execute:
+  echo: false
+---
+
+When performing experiments, we often take repeated measurements of the same quantity.  There are many reasons to do this, which we will explore later. In this section we will consider simply how to present this data.
+
+We could just list the values obtained :
+
+```{python}
+import numpy as np
+import scipy.stats as st
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+
+
+import seaborn as sns
+sns.set_theme()
+
+d = norm.rvs(100, 2, size=10)
+
+print('\n'.join(map(str,d)))
+```
+
+But this rapidly becomes unwieldy, and offers no way to visualise how the measurements are distributed. An improvement is a one-dimensional plot like this :
+
+```{python}
+fig = plt.figure(figsize=(10,1))
+ax = fig.add_subplot(1, 1, 1)
+ax.errorbar(d, [0]*10, yerr=[1]*10, fmt='none')
+ax.set_xlim(90, 110)
+ax.get_yaxis().set_visible(False)
+ax.spines['top'].set_visible(False)
+#ax.spines['bottom'].set_position('center')
+ax.spines['bottom'].set_visible(False)
+ax.spines['left'].set_visible(False)
+ax.spines['right'].set_visible(False)
+plt.savefig('results1.pdf')
+plt.show()
+```
+
+But it is still not very informative. It would be useful to see if these values are clustered - which we might expect since we are repeatedly measuring the same thing. For this we can use a histogram.
+
+The histogram is constructed by dividing the range of measurement outcomes up into "bins", and counting the number of measurements that fall into each bin. In our example, we have measurements between 90 and 110, so we might divide this up into 10 equal size bins. The first bin covers the range $[90, 92)$, the second $[92, 94)$, etc. 
+
+_Look up this bracket/brace notation if you're not familiar with it - square brackets indicate that the endpoint is included in the bin, the brace indicates that the endpoint is not included in the bin. So if we measure a value of exactly 92, there is no ambiguity that this is counted in the second bin, and not the first._
+
+Once we have a count of the number of measurements in each bin, we can present the data as a 2D plot with the count in each bin as the y-variable.
+
+```{python}
+(n, bins, patches)=plt.hist(d, bins=10, range=([90, 110]))
+plt.xticks(bins)
+plt.ylabel("N events / 2 units")
+plt.show()
+```
+
+<!-- Number of bins
+
+Histgram bin area -->

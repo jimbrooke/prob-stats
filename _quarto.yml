@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "Probability & Statistics"
+  author: "Jim Brooke"
+  date: "16/09/2024"
+  chapters:
+    - index.qmd
+    - measurement.qmd
+    - histograms.qmd
+    - singlestats.qmd
+    - probability.qmd
+    - distributions.qmd
+    - clt.qmd
+    - multistats.qmd
+    - propagation.qmd
+    - fitting.qmd
+    - hypotests.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
