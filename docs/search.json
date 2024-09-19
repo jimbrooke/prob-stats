@@ -1,0 +1,22 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Probability & Statistics",
+    "section": "",
+    "text": "Preface\nWelcome to the course notes for Probability & Statistics.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "histograms.html",
+    "href": "histograms.html",
+    "title": "2  Histograms",
+    "section": "",
+    "text": "When performing experiments, we often take repeated measurements of the same quantity. There are many reasons to do this, which we will explore later. In this section we will consider simply how to present this data.\nWe could just list the values obtained :\n\n\n101.51272107010524\n99.62044811450042\n98.74895282962977\n103.65298250638398\n98.76184484971799\n97.71809297158057\n97.50561173004692\n95.76552315958338\n97.91786736250712\n97.70547381970113\n\n\nBut this rapidly becomes unwieldy, and offers no way to visualise how the measurements are distributed. An improvement is a one-dimensional plot like this :\n\n\n\n\n\n\n\n\n\nBut it is still not very informative. It would be useful to see if these values are clustered - which we might expect since we are repeatedly measuring the same thing. For this we can use a histogram.\nThe histogram is constructed by dividing the range of measurement outcomes up into “bins”, and counting the number of measurements that fall into each bin. In our example, we have measurements between 90 and 110, so we might divide this up into 10 equal size bins. The first bin covers the range \\([90, 92)\\), the second \\([92, 94)\\), etc.\nLook up this bracket/brace notation if you’re not familiar with it - square brackets indicate that the endpoint is included in the bin, the brace indicates that the endpoint is not included in the bin. So if we measure a value of exactly 92, there is no ambiguity that this is counted in the second bin, and not the first.\nOnce we have a count of the number of measurements in each bin, we can present the data as a 2D plot with the count in each bin as the y-variable.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Histograms</span>"
+    ]
+  }
+]
