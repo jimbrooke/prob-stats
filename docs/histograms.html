@@ -161,44 +161,50 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./multistats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multi-Variate Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability Distributions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theorydist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Theoretical Distributions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./clt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Central Limit Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./multistats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multi-Variate Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Central Limit Theorem</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./propagation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Error Propagation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Error Propagation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Fitting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fitting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypotests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Hypothesis Tests</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Hypothesis Tests</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -239,22 +245,22 @@ window.Quarto = {
 
 <p>When performing experiments, we often take repeated measurements of the same quantity. There are many reasons to do this, which we will explore later. In this section we will consider simply how to present this data.</p>
 <p>We could just list the values obtained :</p>
-<div id="0235d8a9" class="cell" data-execution_count="1">
+<div id="24da38b6" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
-<pre><code>101.51272107010524
-99.62044811450042
-98.74895282962977
-103.65298250638398
-98.76184484971799
-97.71809297158057
-97.50561173004692
-95.76552315958338
-97.91786736250712
-97.70547381970113</code></pre>
+<pre><code>102.23536646180872
+97.866194770949
+102.42860042080572
+99.89566521268367
+98.09627776570231
+100.81266882069652
+99.96465251264954
+97.10166214259435
+97.03697395569688
+102.69749568210432</code></pre>
 </div>
 </div>
 <p>But this rapidly becomes unwieldy, and offers no way to visualise how the measurements are distributed. An improvement is a one-dimensional plot like this :</p>
-<div id="6f78ec8c" class="cell" data-execution_count="2">
+<div id="d2457633" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -265,9 +271,9 @@ window.Quarto = {
 </div>
 <p>But it is still not very informative. It would be useful to see if these values are clustered - which we might expect since we are repeatedly measuring the same thing. For this we can use a histogram.</p>
 <p>The histogram is constructed by dividing the range of measurement outcomes up into “bins”, and counting the number of measurements that fall into each bin. In our example, we have measurements between 90 and 110, so we might divide this up into 10 equal size bins. The first bin covers the range <span class="math inline">\([90, 92)\)</span>, the second <span class="math inline">\([92, 94)\)</span>, etc.</p>
-<p><em>Look up this bracket/brace notation if you’re not familiar with it - square brackets indicate that the endpoint is included in the bin, the brace indicates that the endpoint is not included in the bin. So if we measure a value of exactly 92, there is no ambiguity that this is counted in the second bin, and not the first.</em></p>
+<p>Look up this bracket/brace notation if you’re not familiar with it - square brackets indicate that the endpoint is included in the bin, the brace indicates that the endpoint is not included in the bin. So if we measure a value of exactly 92, there is no ambiguity that this is counted in the second bin, and not the first.</p>
 <p>Once we have a count of the number of measurements in each bin, we can present the data as a 2D plot with the count in each bin as the y-variable.</p>
-<div id="d1c25961" class="cell" data-execution_count="3">
+<div id="eba08259" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -276,9 +282,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<!-- Number of bins
-
-Histgram bin area -->
+<p>Note the label on the y-axis of the histogram above. We are counting the number of measurements within the range of the bin. It follows that this count will depend on the size of the bin - wider bins will include more events than narrow ones, for the same underlying distribution.</p>
 
 
 

@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./probability.html" rel="next">
+<link href="./multistats.html" rel="next">
 <link href="./histograms.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -132,44 +161,50 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./multistats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multi-Variate Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability Distributions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probability Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theorydist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Theoretical Distributions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./clt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Central Limit Theorem</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./multistats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multi-Variate Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Central Limit Theorem</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./propagation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Error Propagation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Error Propagation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Fitting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Fitting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypotests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Hypothesis Tests</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Hypothesis Tests</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +219,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#mode" id="toc-mode" class="nav-link active" data-scroll-target="#mode"><span class="header-section-number">3.1</span> Mode</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">3.2</span> Median</a></li>
+  <li><a href="#arithmetic-mean" id="toc-arithmetic-mean" class="nav-link" data-scroll-target="#arithmetic-mean"><span class="header-section-number">3.3</span> Arithmetic Mean</a>
+  <ul class="collapse">
+  <li><a href="#other-means" id="toc-other-means" class="nav-link" data-scroll-target="#other-means"><span class="header-section-number">3.3.1</span> Other Means</a></li>
+  </ul></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">3.4</span> Variance</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">3.5</span> Standard Deviation</a></li>
+  <li><a href="#moments" id="toc-moments" class="nav-link" data-scroll-target="#moments"><span class="header-section-number">3.6</span> Moments</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -208,8 +257,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In this section we discuss simple quantities - summary statistics - that we can use to characterise a dataset.</p>
+<section id="mode" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="mode"><span class="header-section-number">3.1</span> Mode</h2>
+<p>The mode of a dataset is the most frequently occuring value.</p>
+</section>
+<section id="median" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="median"><span class="header-section-number">3.2</span> Median</h2>
+<p>The median is the value for which at most half of the dataset is greater, and at most half the dataset is lower. Dice example.</p>
+</section>
+<section id="arithmetic-mean" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="arithmetic-mean"><span class="header-section-number">3.3</span> Arithmetic Mean</h2>
+<p>The arithmetic mean is defined by</p>
+<p><span class="math display">\[\bar{x} = \frac{1}{N} \sum_{i=1}^N x_i\]</span></p>
+<p>where <span class="math inline">\(\bar{x}\)</span> is the mean, <span class="math inline">\(N\)</span> is the size of the dataset, and <span class="math inline">\(x_i\)</span> is the i-th value.</p>
+<!-- Another way to think of the arithmetic mean is that it is the value which minimises the quantity
+
+$$d^2 = \sum_{i=1}^N (\bar{x} - x_i)^2$$
+ -->
+<section id="other-means" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="other-means"><span class="header-section-number">3.3.1</span> Other Means</h3>
+<p>We won’t use them in this course, but for completeness we mention the existence of other definitions of mean</p>
+<p>The <em>geometric</em> mean <span class="math inline">\(\bar{x}_{geom}\)</span> is defined from the product (rather than sum) of all values in the dataset</p>
+<p><span class="math display">\[\bar{x}_{geom} = \left( \prod_{i=1}^N x_i \right) ^{-1}\]</span></p>
+<p>The <em>harmonic</em> mean <span class="math inline">\(\bar{x}_{harm}\)</span> is defined from the sum of reciprocals of the data points</p>
+<p><span class="math display">\[\bar{x}_{harm} = N \left( \sum_{i=1}^N \frac{1}{x_i} \right)^{-1}\]</span></p>
+<p>Henceforth in these notes, we will use just “mean” to refer to the <em>arithmetic</em> mean.</p>
+</section>
+</section>
+<section id="variance" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="variance"><span class="header-section-number">3.4</span> Variance</h2>
+</section>
+<section id="standard-deviation" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">3.5</span> Standard Deviation</h2>
+</section>
+<section id="moments" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="moments"><span class="header-section-number">3.6</span> Moments</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -628,8 +714,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./probability.html" class="pagination-link" aria-label="Probability">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./multistats.html" class="pagination-link" aria-label="Multi-Variate Statistics">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multi-Variate Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
