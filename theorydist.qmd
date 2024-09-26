@@ -1,0 +1,13 @@
+---
+title: "Theoretical Distributions"
+format: html
+---
+
+## Binomial Distribution
+
+
+## Poisson Distribution
+
+
+## Gaussian Distribution
+

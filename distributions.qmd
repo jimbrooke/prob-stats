@@ -3,3 +3,13 @@ title: "Probability Distributions"
 format: html
 ---
 
+In this chapter we will introduce the concept of a probability distribution, together with two of the most important examples you will encounter - at least from the point of view of the physics laboratory.
+
+## Distributions
+
+## Example
+
+## Continuous Distributions
+
+## Changing Variables
+

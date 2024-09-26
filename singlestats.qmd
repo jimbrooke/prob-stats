@@ -5,3 +5,50 @@ execute:
   echo: false
 ---
 
+In this section we discuss simple quantities - summary statistics - that we can use to characterise a dataset.
+
+## Mode
+
+The mode of a dataset is the most frequently occuring value.
+
+
+## Median
+
+The median is the value for which at most half of the dataset is greater, and at most half the dataset is lower.  Dice example.
+
+## Arithmetic Mean
+
+The arithmetic mean is defined by 
+
+$$\bar{x} = \frac{1}{N} \sum_{i=1}^N x_i$$
+
+where $\bar{x}$ is the mean, $N$ is the size of the dataset, and $x_i$ is the i-th value.
+
+<!-- Another way to think of the arithmetic mean is that it is the value which minimises the quantity
+
+$$d^2 = \sum_{i=1}^N (\bar{x} - x_i)^2$$
+ -->
+
+### Other Means
+
+We won't use them in this course, but for completeness we mention the existence of other definitions of mean
+
+The _geometric_ mean $\bar{x}_{geom}$ is defined from the product (rather than sum) of all values in the dataset
+
+$$\bar{x}_{geom} = \left( \prod_{i=1}^N x_i \right) ^{-1}$$
+
+The _harmonic_ mean $\bar{x}_{harm}$ is defined from the sum of reciprocals of the data points
+
+$$\bar{x}_{harm} = N \left( \sum_{i=1}^N \frac{1}{x_i} \right)^{-1}$$
+
+Henceforth in these notes, we will use just "mean" to refer to the _arithmetic_ mean.
+
+## Variance
+
+
+## Standard Deviation
+
+
+## Moments
+
+

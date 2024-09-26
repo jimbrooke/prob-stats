@@ -45,7 +45,7 @@ But it is still not very informative. It would be useful to see if these values 
 
 The histogram is constructed by dividing the range of measurement outcomes up into "bins", and counting the number of measurements that fall into each bin. In our example, we have measurements between 90 and 110, so we might divide this up into 10 equal size bins. The first bin covers the range $[90, 92)$, the second $[92, 94)$, etc. 
 
-_Look up this bracket/brace notation if you're not familiar with it - square brackets indicate that the endpoint is included in the bin, the brace indicates that the endpoint is not included in the bin. So if we measure a value of exactly 92, there is no ambiguity that this is counted in the second bin, and not the first._
+Look up this bracket/brace notation if you're not familiar with it - square brackets indicate that the endpoint is included in the bin, the brace indicates that the endpoint is not included in the bin. So if we measure a value of exactly 92, there is no ambiguity that this is counted in the second bin, and not the first.
 
 Once we have a count of the number of measurements in each bin, we can present the data as a 2D plot with the count in each bin as the y-variable.
 
@@ -56,6 +56,6 @@ plt.ylabel("N events / 2 units")
 plt.show()
 ```
 
-<!-- Number of bins
+Note the label on the y-axis of the histogram above. We are counting the number of measurements within the range of the bin. It follows that this count will depend on the size of the bin - wider bins will include more events than narrow ones, for the same underlying distribution. 
 
-Histgram bin area -->
+

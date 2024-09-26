@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Probability & Statistics"
@@ -10,10 +11,11 @@ book:
     - measurement.qmd
     - histograms.qmd
     - singlestats.qmd
+    - multistats.qmd
     - probability.qmd
     - distributions.qmd
+    - theorydist.qmd
     - clt.qmd
-    - multistats.qmd
     - propagation.qmd
     - fitting.qmd
     - hypotests.qmd
